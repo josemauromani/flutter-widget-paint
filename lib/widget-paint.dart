@@ -12,13 +12,17 @@ class WidgetPainter extends CustomPainter {
   void paint(canvas, size) {
     
     Paint paint = Paint();
-    paint.color = Colors.red;
+    paint.color = Colors.black;
     paint.style = PaintingStyle.stroke;
-    paint.strokeWidth = 8.0;
+    paint.strokeWidth = 6.0;
 
     Path path = Path();
-    print(this.points);
-    path.lineTo(80, 50);
+    int idx = 0;
+    this.points.forEach((point) {
+      var vertice = Map.from(point);
+      (idx==0) ? path.moveTo(vertice['x'], vertice['y']) : path.lineTo(vertice['x'], vertice['y']);
+      idx++;
+     });
     canvas.drawPath(path, paint);
   }
 

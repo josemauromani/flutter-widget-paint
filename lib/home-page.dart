@@ -32,8 +32,8 @@ class _HomePageState extends State<HomePage> {
               ),
               onTapDown: (details) {
                 var posicao = {
-                  'x': details.globalPosition.dx,
-                  'y': details.globalPosition.dy
+                  'x': details.localPosition.dx,
+                  'y': details.localPosition.dy
                 };
                 setState(() {
                   posicoes.add(posicao);
@@ -43,7 +43,6 @@ class _HomePageState extends State<HomePage> {
             height: MediaQuery.of(context).size.height * 0.7,
             width: MediaQuery.of(context).size.width,
           ),
-          Text(posicoes.toString()),
         ],
       ),
     );
