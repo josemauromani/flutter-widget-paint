@@ -40,8 +40,43 @@ class _HomePageState extends State<HomePage> {
                 });
               },
             ),
-            height: MediaQuery.of(context).size.height * 0.7,
             width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.7,
+          ),
+          Expanded(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Ink(
+                        decoration: ShapeDecoration(
+                          color: Colors.black,
+                          shape: CircleBorder(),
+                        ),
+                        child: IconButton(
+                          icon: Icon(Icons.save),
+                          color: Colors.white,
+                          padding: EdgeInsets.all(10),
+                          iconSize: 40,
+                          onPressed: () {
+                            print('salvar');
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('Salvar'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
